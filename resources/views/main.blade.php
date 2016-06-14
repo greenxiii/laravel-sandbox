@@ -7,14 +7,14 @@
 	<title>Main</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
 	<script src="app/app.js"></script>
 	<script src="app/routes.js"></script>
 	<script src="app/components/home/homeController.js"></script>
 </head>
 <body>
 
-<div ng-view></div>
+<div ui-view></div>
 	
 </body>
 

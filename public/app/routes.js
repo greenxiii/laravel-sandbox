@@ -1,9 +1,9 @@
-app.config(function($routeProvider) {
-    $routeProvider
-
-        // route for the home page
-        .when('/', {
-            templateUrl : 'app/components/home/homeView.html',
+app.config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/home');
+    $stateProvider
+       .state('home', {
+            url: '/home',
+            templateUrl: 'app/components/home/homeView.html',
             controller  : 'homeController'
         })
 });
