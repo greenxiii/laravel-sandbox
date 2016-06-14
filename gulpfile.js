@@ -1,16 +1,18 @@
-var elixir = require('laravel-elixir');
+var gulp = require('gulp'),
+	bs = require('browser-sync').create()
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
- */
 
-elixir(function(mix) {
-    mix.sass('app.scss');
+
+gulp.task('browser-sync', function() {
+    bs.init({
+        proxy: "http://laravel-sandbox.com/",
+        open: false
+    });
+});
+
+gulp.task('serve', ['browser-sync', 'watch']);
+
+gulp.task('watch', ['browser-sync'], function() {
+  gulp.watch(['app/Http/Controllers/**/*.php'], bs.reload);
+  gulp.watch(['resources/views/**/*.blade.php'], bs.reload);
 });

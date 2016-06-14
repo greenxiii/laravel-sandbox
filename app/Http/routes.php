@@ -12,5 +12,33 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+
+ /**
+   * Add New Order
+   */
+  Route::post('/order', function (Request $request) {
+    //
+  });
+
+  /**
+   * Remove Order
+   */
+  Route::delete('/order/{id}', function ($id) {
+    //
+  });
+
+   /**
+   * Add New List
+   */
+  Route::post('/list', function (Request $request) {
+    //
+  });
+
+  /**
+   * Remove List
+   */
+  Route::delete('/list/{id}', function ($id) {
+    //
+  });
